@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/22 08:34:13 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/24 08:29:19 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	elem_addend(t_elem *list, t_elem *new);
 void	elem_addstart(t_elem *list, t_elem *new);
 int		elem_hmany(t_elem *list);
 void	list_clear(t_elem *list);
+t_elem	*swap(t_elem *head);
 
 
 #endif
