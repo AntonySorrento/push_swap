@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str2_to_li.c                                       :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 08:07:07 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 14:14:19 by asorrent         ###   ########.fr       */
+/*   Created: 2021/06/25 09:15:33 by asorrent          #+#    #+#             */
+/*   Updated: 2021/06/25 17:12:00 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_elem 	*str2_to_li(char *string)
+t_data	*data_init()
 {
-	char 	**str;
-	t_elem	*elem;
-	t_elem	*head;
-	t_elem	*prev;
-	int		i;
-	int		nb;
-
-	if (!string || !string[0])
-		return NULL;
-	str = ft_split(string, ' ');
-	prev = NULL;
-	i = 0;
-	while (str[i])
-	{
-		if (i != 0)
-			prev = elem;
-		nb = ft_atoi(str[i]);
-		elem = elem_new(nb, prev, NULL);
-		if (i != 0)
-			prev->next = elem;
-		if (i == 0)
-			head = elem;
-		i++;
-	}
-	return (head);
+	t_data	*data;
+	
+	data = malloc(sizeof(t_data));
+	if (!data)
+		return (NULL);
+	data->a = NULL;
+	data->b = NULL;
+	data->a9 = NULL;
+	data->b9 = NULL;
+	return (data);
 }

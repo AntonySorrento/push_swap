@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/24 08:29:16 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:24:58 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,52 @@
 
 int	main(int argc, char **argv)
 {
-	t_elem *a;
-	t_elem *b;// 
-	(void) argc;
+	t_data *data; 
 	
+	data = data_init();
 	if (argc > 2)
-		a = str_to_li(argv);
+		data->a = str_to_li(argv);
 	if (argc == 2)
-		a = str2_to_li(argv[1]);
+		data->a = str2_to_li(argv[1]);
 
-	b = str2_to_li("1 2 3 4");
+	data->b = str2_to_li("10");
 	printf("avant mouvement\n");
-	printli(a); 
-	printf("\n");
-	printli(b);
-	b = swap(b);
-	a = swap(a);
-	printf("après mouvement\n");
-	printli(a); 
-	printf("\n");
-	printli(b);
+	printf("A : ");
+	printli(data->a);
+	printf("B : ");
+	printli(data->b);
+	tail(data, "ab", 1);
+	rrrotate(data, "b");
+	printf("après rrrotate list b\n");
+	printf("A : ");
+	printli(data->a);
+	printf("B : ");
+	printli(data->b);
+	tail(data, "ab", 1);
+
+	/*
+	data->b = swap(data->b);
+	data->a = swap(data->a);
+	printf("après sa et sb\n");
+	printf("A : ");
+	printli(data->a); 
+	printf("B : ");
+	printli(data->b);
+	tail(data, "ab", 1);
+	push_a(data);
+	printf("après push A->B\n");
+	printf("A : ");
+	printli(data->a); 
+	printf("B : ");
+	printli(data->b);
+	tail(data, "ab", 1);
+	push_b(data);
+	printf("après push B->A\n");
+	printf("A : ");
+	printli(data->a); 
+	printf("B : ");
+	printli(data->b);
+	tail(data, "ab", 1);*/
 
 	return (0);
 
