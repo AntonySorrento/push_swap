@@ -6,16 +6,18 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:06:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 15:43:37 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:21:16 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*lm = landmark to know if a2 isn't null*/
 
 #include "push_swap.h"
 
 void	push_b(t_data *data)
 {
-	t_elem *a2;
-	char lm ; /*lm = landmark to know if a2 isn't null*/
+	t_elem	*a2;
+	char	lm ;
 
 	if (!data->a)
 		return ;
@@ -35,9 +37,9 @@ void	push_b(t_data *data)
 
 void	push_a(t_data *data)
 {
-	t_elem *b2;
-	char lm ; /*lm = landmark to know if a2 isn't null*/
-	
+	t_elem	*b2;
+	char	lm ;
+
 	if (!data->b)
 		return ;
 	lm = 0;

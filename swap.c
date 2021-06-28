@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 07:05:22 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 17:50:19 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:45:33 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 t_elem	*swap(t_elem *head)
 {
-	t_elem *scd;
-	t_elem *thr;
+	t_elem	*scd;
+	t_elem	*thr;
 
 	if (!head || !head->next)
 		 return (head);
 	scd = head;
 	scd = scd->next;
 	thr = scd;
-	
 	head->prev = head->next;
 	head->next = scd->next;
 	scd->next = scd->prev;
 	scd->prev = NULL;
-
 	if (!thr->next)
 		return (scd);
 	thr = thr->next;

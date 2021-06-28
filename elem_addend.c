@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 07:24:58 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 17:50:14 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:12:42 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 t_elem	*elem_addend(t_elem *tail, t_elem *new)
 {
-//	t_elem	*temp;
-
 	if (tail == NULL)
 		tail = new;
 	else

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rrrotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 18:23:01 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:43:16 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* bl = before last*/
 
 #include "push_swap.h"
 
 void	rrrotate_b(t_data *data)
 {
-	t_elem *tail;
-	t_elem *bl; /* bl = before last*/
+	t_elem	*tail;
+	t_elem	*bl;
 
 	if (!data->b || !data->b9->prev)
 		return ;
@@ -37,9 +39,25 @@ void	rrrotate_b(t_data *data)
 
 void	rrrotate_a(t_data *data)
 {
-//	t_elem *head;
-//	t_elem *scd;
-(void) data;
+	t_elem	*tail;
+	t_elem	*bl;
+
+	if (!data->a || !data->a9->prev)
+		return ;
+	tail = data->a9;
+	bl = tail->prev;
+	if (bl->prev == NULL)
+	{
+		swap(data->a);
+		data->a = tail;
+		data->a9 = tail->next;
+	}
+	else
+	{
+		data->a = elem_addstart(data->a, tail);
+		bl->next = NULL;
+		data->a9 = bl;
+	}
 }
 
 void	rrrotate(t_data *data, char *list)

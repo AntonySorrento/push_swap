@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 06:53:35 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 15:12:59 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:14:58 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	elem_del(t_elem *elem)
 {
-	t_elem *prev;
-	t_elem *next;
+	t_elem	*prev;
+	t_elem	*next;
 
 	if (!elem)
 		return ;
@@ -30,6 +30,6 @@ void	elem_del(t_elem *elem)
 	free(elem);
 	elem->nb = 0;
 	elem->prev = NULL;
-	elem->next = NULL; 
+	elem->next = NULL;
 	elem = NULL;
 }

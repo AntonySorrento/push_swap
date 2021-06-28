@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 18:09:21 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:26:58 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rotate_b(t_data *data)
 {
-	t_elem *head;
-	t_elem *scd;
+	t_elem	*head;
+	t_elem	*scd;
 
 	if (!data->b || !data->b->next)
 		return ;
@@ -36,8 +36,8 @@ void	rotate_b(t_data *data)
 
 void	rotate_a(t_data *data)
 {
-	t_elem *head;
-	t_elem *scd;
+	t_elem	*head;
+	t_elem	*scd;
 
 	if (!data->a || !data->a->next)
 		return ;

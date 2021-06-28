@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 08:07:07 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 14:14:19 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 07:43:08 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 t_elem 	*str2_to_li(char *string)
 {
-	char 	**str;
+	char	**str;
 	t_elem	*elem;
 	t_elem	*head;
 	t_elem	*prev;
 	int		i;
-	int		nb;
 
 	if (!string || !string[0])
-		return NULL;
+		return (NULL);
 	str = ft_split(string, ' ');
 	prev = NULL;
 	i = 0;
@@ -30,8 +29,7 @@ t_elem 	*str2_to_li(char *string)
 	{
 		if (i != 0)
 			prev = elem;
-		nb = ft_atoi(str[i]);
-		elem = elem_new(nb, prev, NULL);
+		elem = elem_new(ft_atoi(str[i]), prev, NULL);
 		if (i != 0)
 			prev->next = elem;
 		if (i == 0)

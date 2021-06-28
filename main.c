@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/25 18:24:58 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/28 08:26:50 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 int	main(int argc, char **argv)
 {
-	t_data *data; 
-	
+	t_data *data;
+
+	check_error(argv);
 	data = data_init();
 	if (argc > 2)
 		data->a = str_to_li(argv);
 	if (argc == 2)
 		data->a = str2_to_li(argv[1]);
 
-	data->b = str2_to_li("10");
+	data->b = str2_to_li("10 20 30");
 	printf("avant mouvement\n");
 	printf("A : ");
 	printli(data->a);
 	printf("B : ");
 	printli(data->b);
 	tail(data, "ab", 1);
-	rrrotate(data, "b");
-	printf("après rrrotate list b\n");
+	rrrotate(data, "a");
+	printf("après rrrotate list a\n");
 	printf("A : ");
 	printli(data->a);
 	printf("B : ");
