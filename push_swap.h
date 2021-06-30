@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/28 08:26:53 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/30 08:23:54 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "./Libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct s_elem
 {
@@ -51,4 +51,6 @@ void	tail(t_data *data, char *list, int check);
 void	rotate(t_data *data, char *list);
 void	rrrotate(t_data *data, char *list);
 void	check_error(char **string);
+void	error_min_max(void);
+int		ft_atoi_e(const char *str);
 #endif

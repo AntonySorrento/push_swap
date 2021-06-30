@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:18:44 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/28 07:44:58 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/06/30 07:54:39 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_elem	*str_to_li(char *str[])
 	{
 		if (i != 1)
 			prev = elem;
-		nb = ft_atoi(str[i]);
+		nb = ft_atoi_e(str[i]);
 		elem = elem_new(nb, prev, NULL);
 		if (i != 1)
 			prev->next = elem;

@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str2_to_li.c                                       :+:      :+:    :+:   */
+/*   error_min_max.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 08:07:07 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/30 07:54:05 by asorrent         ###   ########.fr       */
+/*   Created: 2021/06/30 07:15:02 by asorrent          #+#    #+#             */
+/*   Updated: 2021/06/30 07:33:07 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_elem 	*str2_to_li(char *string)
+void error_min_max(void)
 {
-	char	**str;
-	t_elem	*elem;
-	t_elem	*head;
-	t_elem	*prev;
-	int		i;
-
-	if (!string || !string[0])
-		return (NULL);
-	str = ft_split(string, ' ');
-	prev = NULL;
-	i = 0;
-	while (str[i])
-	{
-		if (i != 0)
-			prev = elem;
-		elem = elem_new(ft_atoi_e(str[i]), prev, NULL);
-		if (i != 0)
-			prev->next = elem;
-		if (i == 0)
-			head = elem;
-		i++;
-	}
-	return (head);
+	ft_putstr_fd("ERROR : nb < INT_MIN or nb > INT_MAX.\n", 2);
+	exit(EXIT_FAILURE);
 }
