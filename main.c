@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/30 07:16:09 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/01 08:26:51 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_data *data;
+	int	*tab; //
 
 	check_error(argv);
 	data = data_init();
@@ -22,7 +23,12 @@ int	main(int argc, char **argv)
 		data->a = str_to_li(argv);
 	if (argc == 2)
 		data->a = str2_to_li(argv[1]);
+	tab = st_li_to_array(data->a); ///
+	check_dupl(tab);
+	printf("avant mouvement\n");
+	printtab(tab);
 
+/*
 	data->b = str2_to_li("10 20 30");
 	printf("avant mouvement\n");
 	printf("A : ");
@@ -38,7 +44,6 @@ int	main(int argc, char **argv)
 	printli(data->b);
 	tail(data, "ab", 1);
 
-	/*
 	data->b = swap(data->b);
 	data->a = swap(data->a);
 	printf("après sa et sb\n");

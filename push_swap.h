@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/30 08:23:54 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/01 08:26:54 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,7 @@ void	rrrotate(t_data *data, char *list);
 void	check_error(char **string);
 void	error_min_max(void);
 int		ft_atoi_e(const char *str);
+int		*st_li_to_array(t_elem *list);
+void	printtab(int *tab); ///
+void	check_dupl(int	*ar);
 #endif
