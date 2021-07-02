@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/01 08:26:54 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/02 17:45:21 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	printli(t_elem *li); // à supprimer
 void	elem_del(t_elem *elem);
 t_elem	*elem_new(int nb, t_elem *prev, t_elem *next);
 t_elem	*elem_last(t_elem *list);
-t_elem	*elem_addend(t_elem *list, t_elem *new);
-t_elem	*elem_addstart(t_elem *tail, t_elem *new);
+t_elem	*elem_addend(t_elem *tail, t_elem *new);
+t_elem	*elem_addstart(t_elem *head, t_elem *new);
 int		elem_hmany(t_elem *list);
 void	list_clear(t_elem *list);
 t_elem	*swap(t_elem *head);
@@ -53,7 +53,8 @@ void	rrrotate(t_data *data, char *list);
 void	check_error(char **string);
 void	error_min_max(void);
 int		ft_atoi_e(const char *str);
-int		*st_li_to_array(t_elem *list);
-void	printtab(int *tab); ///
 void	check_dupl(int	*ar);
+void	x_insert_after(t_elem *set, t_elem *new);
+t_elem	*x_sort(t_elem *h_src);
+t_elem	*x_pivot(t_elem *min, t_elem *max);
 #endif

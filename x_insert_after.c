@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   x_insert_after.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/02 17:45:17 by asorrent         ###   ########.fr       */
+/*   Created: 2021/07/02 11:56:04 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/02 12:23:19 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	x_insert_after(t_elem *set, t_elem *new)
 {
-	t_data *data;
+	t_elem *temp;
 
-	check_error(argv);
-	data = data_init();
-	if (argc > 2)
-		data->a = str_to_li(argv);
-	if (argc == 2)
-		data->a = str2_to_li(argv[1]);
-//	data->b = str2_to_li("10 20 30");
-	printf("A : ");
-	printli(data->a);
-	t_elem *tri = x_sort(data->a);
-	printf("après tri\n");
-	printli(tri);
-	t_elem *pivot = x_pivot(tri, elem_last(tri));
-	printf("pivot = [%i]\n", pivot->nb);
-
-
-	return (0);
+	if (!set || !new)
+		return ;
+	new->prev = set;
+	new->next = set->next;
+	set->next = new;
+	if (new->next)
+	{
+		temp = new->next;
+		temp->prev = new;
+	}
 }
