@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   optimize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 09:15:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/06 19:20:56 by asorrent         ###   ########.fr       */
+/*   Created: 2021/07/06 19:37:45 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/06 20:45:11 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_data	*data_init(void)
-{
-	t_data	*data;
+char	*optimize2 ()
 
-	data = malloc(sizeof(t_data));
-	if (!data)
-		return (NULL);
-	data->move = NULL;
-	data->a = NULL;
-	data->b = NULL;
-	data->a9 = NULL;
-	data->b9 = NULL;
-	return (data);
+char	*optimize(char *move)
+{
+	char	*s1;
+	char	*s2;
+	char	**tab;
+	int		i;
+	int		j;
+	int		lm;
+
+	lm = 0;
+	i = 0;
+	tab = opti_array();
+
+	while (i < 6)
+	{
+		while (ft_strnstr(move, tab[i]))
+		{
+
+		}
+		i++;
+	}
+
 }

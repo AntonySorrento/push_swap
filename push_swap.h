@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/02 17:45:21 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:09:41 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_elem
 
 typedef struct s_data
 {
+	char	*move;
 	t_elem	*a;
 	t_elem	*b;
 	t_elem	*a9;
@@ -44,6 +45,9 @@ t_elem	*elem_addstart(t_elem *head, t_elem *new);
 int		elem_hmany(t_elem *list);
 void	list_clear(t_elem *list);
 t_elem	*swap(t_elem *head);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
 t_data	*data_init(void);
 void	push_b(t_data *data);
 void	push_a(t_data *data);
@@ -57,4 +61,7 @@ void	check_dupl(int	*ar);
 void	x_insert_after(t_elem *set, t_elem *new);
 t_elem	*x_sort(t_elem *h_src);
 t_elem	*x_pivot(t_elem *min, t_elem *max);
+void	sort_pivot(t_data *data, int pivot);
+void	rec_move(t_data *data, char *str);
+
 #endif

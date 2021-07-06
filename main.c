@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/02 17:45:17 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/05 09:31:32 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ int	main(int argc, char **argv)
 		data->a = str_to_li(argv);
 	if (argc == 2)
 		data->a = str2_to_li(argv[1]);
-//	data->b = str2_to_li("10 20 30");
 	printf("A : ");
 	printli(data->a);
 	t_elem *tri = x_sort(data->a);
-	printf("après tri\n");
-	printli(tri);
 	t_elem *pivot = x_pivot(tri, elem_last(tri));
 	printf("pivot = [%i]\n", pivot->nb);
+	sort_pivot(data, pivot->nb);
+	printf("après tri : ")
+	printf("A : ");
+	printli(data->a);
+	printf("B : ");
+	printli(data->b);
 
 
 	return (0);
