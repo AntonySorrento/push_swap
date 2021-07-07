@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 18:27:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/06 21:09:34 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/07 21:17:50 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 
 int	check_last_move(char *move, char *str)
 {
-	size_t len;
+	size_t 	l;
+	char	c;
 
-	len = ft_strlen(move);
-	if (move[len - 4] == 'r' && move[len - 2] != str[1])
+	c = 'r'; 
+	l = ft_strlen(move);
+	if (move[l - 4] == 'r' && move[l - 2] != str[2])
 	{
-		move[len - 2] = 'r';
+		move[l - 2] = 'r';
 		return (1);
 	}
-	else if (move[len - 3] == 'r' && move[len - 2] != str[1])
+	else if (move[l - 3] == 'r' && move[l - 4] != 'r' && move[l - 2] != str[1])
 	{
-		move[len - 2] = 'r';
+		move[l - 2] = 'r';
 		return (1);
 	}
-	else if (move[len - 3] == 's' && move[len - 2] != str[1])
+	else if (move[l - 3] == 's' && move[l - 2] != str[1])
 	{
-		move[len - 2] = 's';
+		move[l - 2] = 's';
 		return (1);
 	}
 return (0);
 }
 
-void	rec_move(t_data *data, char *str)
+void	rec_move(t_data *data, char *str) // rec_move(char *mv, char *str)
 {
 	char	*temp;
 	size_t	len;
@@ -48,6 +50,14 @@ void	rec_move(t_data *data, char *str)
 		return ;
 	ft_strcpy(temp, data->move);
 	ft_strlcat(temp, str, len);
-	free(data->move);
+	free(data->move); // isoler pour utiliser le main
 	data->move = temp;
 }
+/*
+int main()
+{
+	char new[5] = "pb\n";
+	char move[17] = "pb\nra\nra\nra\npa\n";
+	
+	rec_move(move, new);
+}*/

@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/06 21:09:41 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/07 22:35:56 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ void	list_clear(t_elem *list);
 t_elem	*swap(t_elem *head);
 void	sa(t_data *data);
 void	sb(t_data *data);
-void	ss(t_data *data);
 t_data	*data_init(void);
 void	push_b(t_data *data);
 void	push_a(t_data *data);
 void	tail(t_data *data, char *list, int check);
-void	rotate(t_data *data, char *list);
-void	rrrotate(t_data *data, char *list);
+void	rotate(t_data *data, char list);
+void	rrrotate(t_data *data, char list);
 void	check_error(char **string);
 void	error_min_max(void);
 int		ft_atoi_e(const char *str);

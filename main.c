@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/05 09:31:32 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/07 22:35:59 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	t_elem *pivot = x_pivot(tri, elem_last(tri));
 	printf("pivot = [%i]\n", pivot->nb);
 	sort_pivot(data, pivot->nb);
-	printf("après tri : ")
+	printf("après tri : ");
 	printf("A : ");
 	printli(data->a);
 	printf("B : ");

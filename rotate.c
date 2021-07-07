@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/06 18:14:36 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/07 22:20:05 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ void	rotate_a(t_data *data)
 	}
 }
 
-void	rotate(t_data *data, char *list)
+void	rotate(t_data *data, char list)
 {
-	if ((list[0] == 'a' && list[1] == 'b') || (list[0] == 'b' && list[1] == 'a'))
+/*	if ((list[0] == 'a' && list[1] == 'b') || (list[0] == 'b' && list[1] == 'a'))
 	{
 		rotate_a(data);
 		rotate_b(data);
-		ft_putstr_fd("rr\n", 1);
-	}
-	else if (list[0] == 'b')
+		rec_move(data, "rr\n");
+	}*/
+	if (list == 'b') // mettre "else" devant "if" si remise en service des lignes au dessus
 	{
 		rotate_b(data);
-		ft_putstr_fd("rb\n", 1);
+		rec_move(data, "rb\n");
 	}
-	else if (list[0] == 'a')
+	else if (list == 'a')
 	{
 		rotate_a(data);
-		ft_putstr_fd("ra\n", 1);
+		rec_move(data, "ra\n");
 	}
 }
