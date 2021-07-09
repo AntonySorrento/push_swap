@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/07 22:11:17 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:33:17 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,12 @@ void	rrrotate(t_data *data, char list)
 	{
 		rrrotate_b(data);
 		rec_move(data, "rrb\n");
+		printf("rrb\n");
 	}
 	else if (list == 'a')
 	{
 		rrrotate_a(data);
 		rec_move(data, "rra\n");
+		printf("rra\n");
 	}
 }

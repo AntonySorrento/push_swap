@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 07:55:38 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/30 07:22:49 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/09 17:44:21 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	check_error(char **string)
 				;
 			else
 			{
-				ft_putstr_fd("ERROR : forbidden caractere in the string.\n", 2);
-				ft_putstr_fd("Please, use only 0-9, -, + and space \n", 1);
+				ft_putstr_fd("Error\n", 2);
 				exit(EXIT_FAILURE);
 			}
 			j++;

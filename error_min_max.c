@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 07:15:02 by asorrent          #+#    #+#             */
-/*   Updated: 2021/06/30 07:33:07 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/09 17:42:39 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void error_min_max(void)
 {
-	ft_putstr_fd("ERROR : nb < INT_MIN or nb > INT_MAX.\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }

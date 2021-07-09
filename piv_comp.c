@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   piv_comp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 16:09:49 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 18:08:53 by asorrent         ###   ########.fr       */
+/*   Created: 2021/07/09 16:48:31 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/09 17:13:46 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	piv_comp(t_elem *head, int pivot, char comp)
 {
-	t_data *data;
-
-	check_error(argv);
-	data = data_init();
-	if (argc > 2)
-		data->a = str_to_li(argv);
-	if (argc == 2)
-		data->a = str2_to_li(argv[1]);
-	check_dupl(data->a);
-	tail(data, "ab", 0);
-	t_elem *tri = x_sort(data->a);
-	t_elem *pivot = x_pivot(tri, elem_last(tri));
-	printf("pivot = [%i]\n", pivot->nb);
-	sort_pivot(data, pivot->nb);
+	if (comp == 'u')
+	{ 
+		while(head)
+		{
+			if (head->nb >= pivot)
+				return (1);
+			head = head->next;
+		}
+	}
+	if (comp == 'l')
+	{
+		while(head)
+		{
+			if (head->nb <= pivot)
+				return (1);
+			head = head->next;
+		}
+	}
 	return (0);
 }

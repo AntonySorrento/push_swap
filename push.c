@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:06:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/07 21:59:42 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:30:16 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	push_b(t_data *data)
 		a2->prev = NULL;
 	}
 	rec_move(data, "pb\n");
+	printf("pb\n");
 }
 
 void	push_a(t_data *data)
@@ -56,4 +57,5 @@ void	push_a(t_data *data)
 		b2->prev = NULL;
 	}
 	rec_move(data, "pa\n");
+	printf("pa\n");
 }

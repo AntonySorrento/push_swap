@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/07 22:35:56 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/09 18:08:50 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 t_elem	*str_to_li(char *str[]);
 t_elem	*str2_to_li(char *str);
 void	printli(t_elem *li); // à supprimer
+void	there(); // à supprimer 
 void	elem_del(t_elem *elem);
 t_elem	*elem_new(int nb, t_elem *prev, t_elem *next);
 t_elem	*elem_last(t_elem *list);
@@ -56,11 +57,12 @@ void	rrrotate(t_data *data, char list);
 void	check_error(char **string);
 void	error_min_max(void);
 int		ft_atoi_e(const char *str);
-void	check_dupl(int	*ar);
+void	check_dupl(t_elem *head);
 void	x_insert_after(t_elem *set, t_elem *new);
 t_elem	*x_sort(t_elem *h_src);
 t_elem	*x_pivot(t_elem *min, t_elem *max);
 void	sort_pivot(t_data *data, int pivot);
 void	rec_move(t_data *data, char *str);
+int		piv_comp(t_elem *head, int pivot, char comp);
 
 #endif
