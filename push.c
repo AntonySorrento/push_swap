@@ -6,13 +6,27 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:06:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 15:30:16 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/11 16:30:33 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*lm = landmark to know if a2 isn't null*/
 
 #include "push_swap.h"
+
+void	opportunity(t_data *data, char	list)
+{
+	if (list == 'b')
+	{
+		if (data->b->next && data->b->nb < data->b->next->nb)
+			sb(data);
+	}
+	if (list == 'a')
+	{
+		if (data->a->next && data->a->nb > data->a->next->nb)
+			sb(data);
+	}
+}
 
 void	push_b(t_data *data)
 {
@@ -34,7 +48,7 @@ void	push_b(t_data *data)
 		a2->prev = NULL;
 	}
 	rec_move(data, "pb\n");
-	printf("pb\n");
+	opportunity(data, 'b');
 }
 
 void	push_a(t_data *data)
@@ -57,5 +71,5 @@ void	push_a(t_data *data)
 		b2->prev = NULL;
 	}
 	rec_move(data, "pa\n");
-	printf("pa\n");
+	opportunity(data, 'a');
 }

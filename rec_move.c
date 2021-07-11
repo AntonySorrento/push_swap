@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 18:27:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 15:29:02 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/11 16:24:57 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	rec_move(t_data *data, char *str) // rec_move(char *mv, char *str)
 {
 	char	*temp;
 	size_t	len;
-	
+
+	printf("%s", str); // à suprrimer	
 	if (check_last_move(data->move, str) == 1)
 		return ;
 	len = ft_strlen(str) + ft_strlen(data->move) + 1;

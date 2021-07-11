@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 18:08:50 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/11 20:27:12 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_elem
 	int				nb;
 	struct s_elem	*next;
 	struct s_elem	*prev;
+	int				ps; // pivot_sort (sorted with this pivot)
 }	t_elem;
 
 typedef struct s_data
@@ -61,8 +62,11 @@ void	check_dupl(t_elem *head);
 void	x_insert_after(t_elem *set, t_elem *new);
 t_elem	*x_sort(t_elem *h_src);
 t_elem	*x_pivot(t_elem *min, t_elem *max);
-void	sort_pivot(t_data *data, int pivot);
+void	sort_pivot(t_data *data, int pivot, int ps);
 void	rec_move(t_data *data, char *str);
 int		piv_comp(t_elem *head, int pivot, char comp);
+int		check_sorted(t_data *data, char list);
+void	sort3_a(t_data *data);
+void	sort3_b(t_data *data);
 
 #endif

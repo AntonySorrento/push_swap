@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 15:33:17 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/11 20:22:45 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 #include "push_swap.h"
 
+/* from ABC to CAB*/
+
 void	rrrotate_b(t_data *data)
 {
-	t_elem	*tail;
-	t_elem	*bl;
-
-	if (!data->b || !data->b9->prev)
+	t_elem	*A;
+	t_elem	*B;
+	t_elem	*C;
+	
+	if (!data->b || !data->b9->prev || !data->b->next || !data->b9->prev )
 		return ;
-	tail = data->b9;
-	bl = tail->prev;
-	if (bl->prev == NULL)
-	{
-		swap(data->b);
-		data->b = tail;
-		data->b9 = tail->next;
-	}
-	else
-	{
-		data->b = elem_addstart(data->b, tail);
-		bl->next = NULL;
-		data->b9 = bl;
-	}
+	A = data->b;
+	B = data->b9->prev;
+	C = data->b9;
+	there();
+	A->prev = C;
+	C->next = A;
+	C->prev = NULL;
+	B->next = NULL;
+	data->a = C;
+	data->a9 = B;
 }
 
 void	rrrotate_a(t_data *data)
@@ -72,12 +71,10 @@ void	rrrotate(t_data *data, char list)
 	{
 		rrrotate_b(data);
 		rec_move(data, "rrb\n");
-		printf("rrb\n");
 	}
 	else if (list == 'a')
 	{
 		rrrotate_a(data);
 		rec_move(data, "rra\n");
-		printf("rra\n");
 	}
 }

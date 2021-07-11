@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 15:42:04 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/11 19:11:03 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,10 @@ void	rotate(t_data *data, char list)
 	{
 		rotate_b(data);
 		rec_move(data, "rb\n");
-		printf("rb\n");
 	}
 	else if (list == 'a')
 	{
 		rotate_a(data);
 		rec_move(data, "ra\n");
-		printf("ra\n");
 	}
 }
