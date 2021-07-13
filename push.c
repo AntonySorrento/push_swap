@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:06:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/11 16:30:33 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/13 15:04:38 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	push_b(t_data *data)
 		lm = 1;
 	}
 	data->b = elem_addstart(data->b, data->a);
+	data->b->ps = data->pivot; 
 	if (lm == 1)
 	{
 		data->a = a2;
@@ -65,11 +66,14 @@ void	push_a(t_data *data)
 		lm = 1;
 	}
 	data->a = elem_addstart(data->a, data->b);
+	data->a->ps = data->pivot; 
 	if (lm == 1)
 	{
 		data->b = b2;
 		b2->prev = NULL;
 	}
+	else if (lm == 0)
+		data->b = NULL;
 	rec_move(data, "pa\n");
 	opportunity(data, 'a');
 }

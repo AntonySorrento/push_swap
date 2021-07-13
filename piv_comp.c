@@ -6,31 +6,34 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 16:48:31 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 17:13:46 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/12 19:08:58 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	piv_comp(t_elem *head, int pivot, char comp)
+int	piv_comp(t_elem *head, int pivot, char comp, int ps)
 {
-	if (comp == 'u')
+	int lm;
+
+	lm = 0;
+	if (comp == '>')
 	{ 
 		while(head)
 		{
-			if (head->nb >= pivot)
-				return (1);
+			if (head->nb > pivot && head->ps == ps)
+				lm = 1;
 			head = head->next;
 		}
 	}
-	if (comp == 'l')
+	if (comp == '<')
 	{
 		while(head)
 		{
-			if (head->nb <= pivot)
-				return (1);
+			if (head->nb <= pivot && head->ps == ps)
+				lm = 1;
 			head = head->next;
 		}
 	}
-	return (0);
+	return (lm);
 }

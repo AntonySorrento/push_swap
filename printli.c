@@ -7,7 +7,7 @@ void	printli(t_elem *elem)
 
 	sec = 0;
 	nb = 0;
-	while (elem && sec < 10)
+	while (elem && sec < 25)
 	{
 		nb = elem->nb;
 		printf("[%i] ", nb);
@@ -15,4 +15,12 @@ void	printli(t_elem *elem)
 		sec++;
 	}
 	printf("\n");
+}
+
+void	print2li(t_data *data)
+{
+	printf("A = ");
+	printli(data->a);
+	printf("B = ");
+	printli(data->b);
 }

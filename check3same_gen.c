@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   x_srch_pivots.c                                    :+:      :+:    :+:   */
+/*   check_3_to_sort.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:18:15 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 09:05:44 by asorrent         ###   ########.fr       */
+/*   Created: 2021/07/12 11:53:44 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/12 12:21:09 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
+int	check3same_gen(t_data *data)
 {
-	t_elem	*pivot;
-	t_elem	*min;
-	t_elem	*max;
 	int	i;
+	t_elem *temp;
 
-	min = x_sort(list, list->ps);
-	max = elem_last(min);
-/*	if (!min || !max)
-		return (NULL);*/
-	pivot = min;
+	temp = data->b;
+
 	i = 0;
-	while (min != max)
+	while(temp->next && temp->ps == temp->next->ps)
 	{
-		min = min->next;
 		i++;
+		temp = temp->next;
+		if (i > 2)
+			return (0);
 	}
-	min = pivot;
-/*	if (i < 3)
-		return (NULL);*/
-	i = (i / 2);
-	while (i != 0)
-	{
-		pivot = pivot->next;
-		i--;
-	}
-	return (pivot->nb);
+	return (1);
 }

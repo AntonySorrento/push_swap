@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:15:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/06 19:20:56 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:28:23 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_data	*data_init(void)
 	data->b = NULL;
 	data->a9 = NULL;
 	data->b9 = NULL;
+	data->pivot = 2147483647;
 	return (data);
 }

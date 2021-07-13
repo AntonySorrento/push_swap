@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/11 20:27:12 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/13 15:30:50 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ typedef struct s_data
 	t_elem	*b;
 	t_elem	*a9;
 	t_elem	*b9;
+	int		pivot;
 }	t_data;
 
 t_elem	*str_to_li(char *str[]);
 t_elem	*str2_to_li(char *str);
 void	printli(t_elem *li); // à supprimer
+void	print2li(t_data *data); // à suprrimer
 void	there(); // à supprimer 
 void	elem_del(t_elem *elem);
 t_elem	*elem_new(int nb, t_elem *prev, t_elem *next);
@@ -45,6 +47,7 @@ t_elem	*elem_last(t_elem *list);
 t_elem	*elem_addend(t_elem *tail, t_elem *new);
 t_elem	*elem_addstart(t_elem *head, t_elem *new);
 int		elem_hmany(t_elem *list);
+int		elem_hmany_ps(t_elem *list);
 void	list_clear(t_elem *list);
 t_elem	*swap(t_elem *head);
 void	sa(t_data *data);
@@ -60,13 +63,18 @@ void	error_min_max(void);
 int		ft_atoi_e(const char *str);
 void	check_dupl(t_elem *head);
 void	x_insert_after(t_elem *set, t_elem *new);
-t_elem	*x_sort(t_elem *h_src);
-t_elem	*x_pivot(t_elem *min, t_elem *max);
-void	sort_pivot(t_data *data, int pivot, int ps);
+t_elem	*x_sort(t_elem *h_src, int ps);
+int 	x_pivot(t_elem *list); //int x_pivot(t_elem *min, t_elem *max);
+void	sort_pivot_a(t_data *data);
 void	rec_move(t_data *data, char *str);
-int		piv_comp(t_elem *head, int pivot, char comp);
+int		piv_comp(t_elem *head, int pivot, char comp, int ps);
 int		check_sorted(t_data *data, char list);
 void	sort3_a(t_data *data);
 void	sort3_b(t_data *data);
-
+int 	check3same_gen(t_data *data);
+// void	sort_head_b(t_data *data); // classe B dans l'ordre quand il n'en reste plus que 3.
+// void	p_sort_a(t_data *data);
+void	sort_pivot_b (t_data *data); //, int pivot, int ps);
+void	sort(t_data *data);
+// void    sort_b_after_a3(t_data *data);
 #endif
