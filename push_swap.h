@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 15:59:33 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 15:30:50 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:02:15 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	sb(t_data *data);
 t_data	*data_init(void);
 void	push_b(t_data *data);
 void	push_a(t_data *data);
-void	tail(t_data *data, char *list, int check);
+void	tail(t_data *data, char *list, int check); // à modifier avant push
 void	rotate(t_data *data, char list);
 void	rrrotate(t_data *data, char list);
 void	check_error(char **string);
@@ -64,17 +64,17 @@ int		ft_atoi_e(const char *str);
 void	check_dupl(t_elem *head);
 void	x_insert_after(t_elem *set, t_elem *new);
 t_elem	*x_sort(t_elem *h_src, int ps);
-int 	x_pivot(t_elem *list); //int x_pivot(t_elem *min, t_elem *max);
-void	sort_pivot_a(t_data *data);
+int 	x_pivot(t_elem *list);
+void	sort_pivot_a(t_data *data, int first);
 void	rec_move(t_data *data, char *str);
 int		piv_comp(t_elem *head, int pivot, char comp, int ps);
 int		check_sorted(t_data *data, char list);
-void	sort3_a(t_data *data);
+void	sort3_a(t_data *data, int first);
 void	sort3_b(t_data *data);
 int 	check3same_gen(t_data *data);
-// void	sort_head_b(t_data *data); // classe B dans l'ordre quand il n'en reste plus que 3.
-// void	p_sort_a(t_data *data);
-void	sort_pivot_b (t_data *data); //, int pivot, int ps);
+void	sort_pivot_b (t_data *data);
 void	sort(t_data *data);
-// void    sort_b_after_a3(t_data *data);
+int		count_char(char *str, char c);
+void	free_data(t_data *data);
+t_elem	*arg_to_li(char **tab_str);
 #endif

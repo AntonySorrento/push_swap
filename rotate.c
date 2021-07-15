@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/11 19:11:03 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 16:23:54 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,18 @@
 
 void	rotate_b(t_data *data)
 {
-	t_elem	*head;
-	t_elem	*scd;
-
-	if (!data->b || !data->b->next)
-		return ;
-	head = data->b;
-	scd = head->next;
-	if (scd->next == NULL)
-	{
-		swap(data->b);
-		data->b9 = head;
-	}
-	else
-	{
-		data->b9 = elem_addend(data->b9, head);
-		scd->prev = NULL;
-		data->b = scd;
-	}
+	t_elem	*a;
+	t_elem	*b;
+	t_elem	*c;
+	a = data->b;
+	b = a->next;
+	c = data->b9;
+	a->prev = c;
+	c->next = a;
+	a->next = NULL;
+	b->prev = NULL;
+	data->b = b;
+	data->b9 = a;
 }
 
 void	rotate_a(t_data *data)
@@ -58,20 +52,28 @@ void	rotate_a(t_data *data)
 
 void	rotate(t_data *data, char list)
 {
-/*	if ((list[0] == 'a' && list[1] == 'b') || (list[0] == 'b' && list[1] == 'a'))
+	if (list == 'b')
 	{
-		rotate_a(data);
-		rotate_b(data);
-		rec_move(data, "rr\n");
-	}*/
-	if (list == 'b') // mettre "else" devant "if" si remise en service des lignes au dessus
-	{
-		rotate_b(data);
-		rec_move(data, "rb\n");
+		if (elem_hmany(data->b) <= 1)
+			return ;
+		else if (elem_hmany(data->b) == 2)
+			sb(data);
+		else
+		{
+			rotate_b(data);
+			rec_move(data, "rb\n");
+		}
 	}
 	else if (list == 'a')
 	{
-		rotate_a(data);
-		rec_move(data, "ra\n");
+		if (elem_hmany(data->a) <= 1)
+			return ;
+		else if (elem_hmany(data->a) == 2)
+			sa(data);
+		else
+		{
+			rotate_a(data);
+			rec_move(data, "ra\n");
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 11:40:56 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 15:31:02 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:21:51 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void sort3_head_b(t_data *data)
 
 void sort3_b(t_data *data)
 {
-	printf("sort3_b\n");
 	if (elem_hmany_ps(data->b) == 3)
 		sort3_head_b(data);
 	else if (elem_hmany_ps(data->b) == 2)

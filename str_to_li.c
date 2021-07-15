@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:18:44 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/09 17:45:36 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:15:34 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ t_elem	*str_to_li(char *str[])
 			head = elem;
 		i++;
 	}
+	check_dupl(head);
 	return (head);
 }

@@ -7,7 +7,7 @@ void	printli(t_elem *elem)
 
 	sec = 0;
 	nb = 0;
-	while (elem && sec < 25)
+	while (elem && sec < 101)
 	{
 		nb = elem->nb;
 		printf("[%i] ", nb);

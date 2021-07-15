@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 18:24:08 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 15:18:24 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:21:45 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	sort_pivot_b (t_data *data)
 	pivot = x_pivot(data->b);
 	data->pivot = pivot;
 	ps = data->b->ps;
-	printf("pivot B = %i\n", pivot);
-	printf("ps B = %i\n", ps);
 	while (piv_comp(data->b, pivot, '>', ps) == 1)
 	{
 		if(data->b && data->b->ps == ps && data->b->nb > pivot) // 1

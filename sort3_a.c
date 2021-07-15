@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 17:51:55 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 15:30:53 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:07:34 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,27 @@ void	sort3a_real(t_data *data)
 		action2(data, "s");
 }
 
+void	sort3a_real_first(t_data *data)
+{
+	t_elem *a;
+	t_elem *b;
+	t_elem *c;
+	
+	a = data->a;
+	b = data->a->next;
+	c = data->a->next->next;
+	if (a->nb < b->nb && b->nb > c->nb && c->nb > a->nb)
+		action2(data, "ts");
+	else if (a->nb > b->nb && b->nb > c->nb)
+		action2(data, "st");
+	else if(a->nb > b->nb && b->nb < c->nb && c->nb < a->nb)
+		action2(data, "r");
+	else if (a->nb < b->nb && b->nb > c->nb && c->nb < a->nb)
+		action2(data, "t");
+	else if (a->nb > b->nb && b->nb < c->nb && c->nb > a->nb)
+		action2(data, "s");
+}
+
 void	flag_a_intmin(t_data *data)
 {
 	t_elem *temp;
@@ -63,12 +84,11 @@ void	flag_a_intmin(t_data *data)
 	}
 }
 
-void 	sort3_a(t_data *data)
+void 	sort3_a(t_data *data, int first)
 {
 	int		size;
 	t_elem	*a;
 
-	printf("sort3_a\n");
 	if (!data->a)
 		return ;
 	a = data->a;
@@ -82,8 +102,10 @@ void 	sort3_a(t_data *data)
 		if (a->nb > a->next->nb)
 			action2(data, "s");
 	}
-	else if (size == 3)
+	else if (size == 3 && first == 0)
 		sort3a_real(data);
+	else if (size == 3 && first == 1)
+		sort3a_real_first(data);
 }
 /*
 void	sort3b_real(t_data *data)

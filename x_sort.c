@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 11:37:15 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/12 19:37:47 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 17:31:31 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_elem	*x_sort(t_elem *h_src, int ps)
 	t_elem	*h_dst;
 	t_elem	*new;
 	t_elem	*here;
-
 	h_dst = elem_new(h_src->nb, NULL, NULL);
 	h_src = h_src->next;
 	while (h_src && h_src->ps == ps)

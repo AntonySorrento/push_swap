@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:18:15 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 09:05:44 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:13:49 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
 	t_elem	*min;
 	t_elem	*max;
 	int	i;
-
+	
 	min = x_sort(list, list->ps);
 	max = elem_last(min);
-/*	if (!min || !max)
-		return (NULL);*/
 	pivot = min;
 	i = 0;
 	while (min != max)
@@ -31,13 +29,12 @@ int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
 		i++;
 	}
 	min = pivot;
-/*	if (i < 3)
-		return (NULL);*/
 	i = (i / 2);
 	while (i != 0)
 	{
 		pivot = pivot->next;
 		i--;
 	}
+//	list_clear(min); // à débugger et activer
 	return (pivot->nb);
 }

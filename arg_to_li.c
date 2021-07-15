@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   arg_to_li.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 10:48:45 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 17:31:18 by asorrent         ###   ########.fr       */
+/*   Created: 2021/07/15 18:36:44 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/15 19:11:27 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_elem	*elem_new(int nb, t_elem *prev, t_elem *next)
+t_elem	*arg_to_li(char **tab_str)
 {
-	t_elem	*new;
+	char	*str;
+	int		i;
+	char	*temp;
+	t_elem	*list;
 
-	new = malloc(sizeof(t_elem));
-	if (!new)
-		return (NULL);
-	new->nb = nb;
-	new->prev = prev;
-	new->next = next;
-	new->ps = 2147483647;
-	return (new);
+	i = 1;
+	while (tab_str[i])
+	{
+		temp = ft_strjoin(str, tab_str[i]);
+		free(str);
+		str = NULL;
+		str = ft_strjoin(temp, " ");
+		free(temp);
+		temp = NULL;
+		i++;
+	}
+	list = str2_to_li(str);
+	free(str);
+	str = NULL;
+	return (list);
 }

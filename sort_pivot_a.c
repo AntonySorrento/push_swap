@@ -6,13 +6,13 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 08:33:43 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 15:18:21 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:19:55 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_pivot_a(t_data *data)
+void	sort_pivot_a(t_data *data, int first)
 {
 	int pivot;
 	int ps;
@@ -24,22 +24,27 @@ void	sort_pivot_a(t_data *data)
 	data->pivot = x_pivot(data->a);
 	pivot = data->pivot;
 	ps = data->a->ps;
-	printf("pivot A = %i\n", pivot);
-	printf("ps A = %i\n", ps);
 	while (piv_comp(data->a, pivot, '<', ps) == 1)
 	{
 		if(data->a && data->a->ps == ps && data->a->nb <= pivot) // 1
+		{
 			push_b(data);
+		}
 		else if (data->a->next && data->a->next->ps == ps && data->a->next->nb <= pivot) // 2
+		{
 			sa(data);
+		}
 		else if (data->a->ps == ps) 
 		{
 			rotate(data, 'a');
 			nb_rb++;
 		}
 	}
-	while (nb_rb-- > 0)
+
+	while (nb_rb-- > 0 && first == 0)
 		rrrotate(data, 'a');
+	if (!data->b9)
+		tail(data, "b", 0);
 }
 
 /*
