@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 07:05:22 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 16:24:47 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:46:04 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,12 @@ void	sa(t_data *data)
 	data->a = swap(data->a);
 	if (data->a)
 		rec_move(data, "sa\n");
+	if (!data->a->next->next)
+		data->a9 = data->a->next;
 	if (data->b && data->b->next)
 	{
-	if (data->b->nb < data->b->next->nb)
-		sb(data);
+		if (data->b->nb < data->b->next->nb)
+			sb(data);
 	}
 }
 
@@ -71,6 +73,8 @@ void	sb(t_data *data)
 	data->b = swap(data->b);
 	if (data->b)
 		rec_move(data, "sb\n");
+	if (!data->b->next->next)
+		data->b9 = data->b->next;
 	if (data->a && data->a->next)
 	{
 		if (data->a->nb > data->a->next->nb)

@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 06:53:35 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 17:34:17 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:01:00 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,5 @@ void	elem_del(t_elem *elem)
 	if (elem->next)
 		next->prev = elem->prev;
 	free(elem);
-	elem->nb = 0;
-	elem->prev = NULL;
-	elem->next = NULL;
 	elem = NULL;
 }

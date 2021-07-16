@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 16:23:54 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:49:51 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	rotate_a(t_data *data)
 	scd = head->next;
 	if (scd->next == NULL)
 	{
-		swap(data->a);
+		sa(data);
 		data->a9 = head;
 	}
 	else

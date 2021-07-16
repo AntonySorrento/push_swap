@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 07:00:54 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 18:08:16 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/16 12:31:10 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ void	list_clear(t_elem *list)
 
 	if (!list)
 		return ;
-	there();
 	while (list)
 	{
 		temp = list;
-		if (list->next)
-			list = list->next;
+		list = list->next;
 		elem_del(temp);
 	}
 }

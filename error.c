@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   x_srch_pivots.c                                    :+:      :+:    :+:   */
+/*   error_min_max.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:18:15 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 17:18:37 by asorrent         ###   ########.fr       */
+/*   Created: 2021/06/30 07:15:02 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/16 17:45:51 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
+void error(t_data *data)
 {
-	t_elem	*pivot;
-	t_elem	*min;
-	t_elem	*max;
-	int	i;
-	
-	min = x_sort(list, list->ps);
-	max = elem_last(min);
-	pivot = min;
-	i = 0;
-	while (min != max)
+	if (data->move)
 	{
-		min = min->next;
-		i++;
+		free(data->move);
+		data->move = NULL;
 	}
-	min = pivot;
-	i = (i / 2);
-	while (i != 0)
-	{
-		pivot = pivot->next;
-		i--;
-	}
-	i = pivot->nb;
-	list_clear(min); // à débugger et activer
-	return (i);
+	tail(data, "ab", 0);
+	if (data->a)
+		list_clear(data->a);
+	if (data->b)
+		list_clear(data->b);
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
 }

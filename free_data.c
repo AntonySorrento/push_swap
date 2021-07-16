@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:44:48 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 17:02:51 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:45:54 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 void	free_data(t_data *data)
 {
-	free(data->move);
-	data->move = NULL;	
-	list_clear(data->a);
-	list_clear(data->b);
-	data->pivot = 0;
-	data->a9 = NULL;
-	data->b9 = NULL;
+	if(!data)
+		return ;
+	if (data->move)
+	{
+		free(data->move);
+		data->move = NULL;
+	}
+	if (data->a)
+	{
+		list_clear(data->a);
+		data->a = NULL;
+	}
+	if (data->b)
+	{
+		list_clear(data->b);
+		data->b = NULL;
+	}
+	free(data);
 }
