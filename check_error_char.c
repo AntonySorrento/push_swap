@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_to_li.c                                        :+:      :+:    :+:   */
+/*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:36:44 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/19 21:03:14 by asorrent         ###   ########.fr       */
+/*   Created: 2021/06/28 07:55:38 by asorrent          #+#    #+#             */
+/*   Updated: 2021/07/19 20:53:15 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_elem	*arg_to_li(char **tab_str, t_data *data)
+void	check_error_char(char **string, t_data *data)
 {
-	char	*str;
 	int		i;
-	char	*temp;
-	t_elem	*list;
+	int		j;
+	char	c;
+	int		e;
 
-	check_error_char(tab_str, data);
 	i = 1;
-	str = malloc(2);
-	ft_strcpy(str, " ");
-	while (tab_str[i])
+	e = 0;
+	while (string[i])
 	{
-		temp = ft_strjoin(str, tab_str[i]);
-		free(str);
-		str = NULL;
-		str = ft_strjoin(temp, " ");
-		free(temp);
-		temp = NULL;
+		j = 0;
+		c = string[i][j];
+		while (c)
+		{
+			if (ft_isdigit((int)c) || c == '-' || c == '+' || c == ' ')
+				;
+			else
+				e = 1;
+			j++;
+			c = string[i][j];
+		}
 		i++;
 	}
-	list = str_to_li(str, data);
-	free(str);
-	str = NULL;
-	return (list);
+	if (e == 1)
+		error(data);
 }
