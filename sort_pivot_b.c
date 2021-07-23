@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 18:24:08 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 18:21:45 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 13:34:56 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	sort_pivot_b (t_data *data)
 		else if (data->b->ps == ps) // rien
 		{
 			rotate(data, 'b');
-			nb_rb++;
+			if (elem_hmany(data->b) != elem_hmany_ps(data->b))
+				nb_rb++;
 		}
 	}
 	while (nb_rb-- > 0)
