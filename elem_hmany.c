@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 08:15:00 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/13 08:13:11 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:14:26 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	elem_hmany(t_elem *list)
 int	elem_hmany_ps(t_elem *list)
 {
 	int	many;
-	int ps;
+	int	ps;
 
 	ps = list->ps;
 	many = 0;

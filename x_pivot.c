@@ -6,19 +6,19 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:18:15 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 17:18:37 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:25:07 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
+int	x_pivot(t_elem *list)
 {
 	t_elem	*pivot;
 	t_elem	*min;
 	t_elem	*max;
-	int	i;
-	
+	int		i;
+
 	min = x_sort(list, list->ps);
 	max = elem_last(min);
 	pivot = min;
@@ -36,6 +36,6 @@ int	x_pivot(t_elem *list) // int	x_pivot(t_elem *min, t_elem *max)
 		i--;
 	}
 	i = pivot->nb;
-	list_clear(min); // à débugger et activer
+	list_clear(min);
 	return (i);
 }

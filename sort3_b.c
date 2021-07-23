@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 11:40:56 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 18:21:51 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:57:00 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	action(t_data *data, char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -30,15 +30,15 @@ void	action(t_data *data, char *str)
 			rotate(data, 'b');
 		else if (str[i] == 't')
 			rrrotate(data, 'b');
-		i++;   
+		i++;
 	}
 }
 
-void sort3_head_b(t_data *data)
+void	sort3_head_b(t_data *data)
 {
-	t_elem *a;
-	t_elem *b;
-	t_elem *c;
+	t_elem	*a;
+	t_elem	*b;
+	t_elem	*c;
 
 	a = data->b;
 	b = a->next;
@@ -57,7 +57,7 @@ void sort3_head_b(t_data *data)
 		action(data, "spspp");
 }
 
-void sort3_b(t_data *data)
+void	sort3_b(t_data *data)
 {
 	if (elem_hmany_ps(data->b) == 3)
 		sort3_head_b(data);

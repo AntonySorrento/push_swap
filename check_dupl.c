@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 08:03:09 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 17:09:43 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:12:36 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	*li_to_array(t_elem *head)
 	int	*tab;
 	int	i;
 
-	tab = malloc(sizeof(int)*elem_hmany(head));
+	tab = malloc(sizeof(int) * elem_hmany(head));
 	if (!tab)
 		return (NULL);
 	i = 0;
@@ -34,9 +34,9 @@ void	check_dupl(t_elem *head, t_data *data)
 {
 	int	i;
 	int	j;
-	int *tab;
-	int e;
-	int len;
+	int	*tab;
+	int	e;
+	int	len;
 
 	tab = li_to_array(head);
 	i = 0;

@@ -6,13 +6,13 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 07:15:02 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 17:45:51 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:14:55 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void error(t_data *data)
+void	error(t_data *data)
 {
 	if (data->move)
 	{

@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 16:48:31 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/23 11:57:53 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:27:45 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	piv_comp(t_elem *head, int pivot, char comp, int ps)
 {
-	int lm;
+	int	lm;
 
 	lm = 0;
 	if (comp == '>')
-	{ 
-		while(head)
+	{
+		while (head)
 		{
 			if (head->nb > pivot && head->ps == ps)
 				lm = 1;
@@ -28,7 +28,7 @@ int	piv_comp(t_elem *head, int pivot, char comp, int ps)
 	}
 	if (comp == '<')
 	{
-		while(head)
+		while (head)
 		{
 			if (head->nb <= pivot && head->ps == ps)
 				lm = 1;

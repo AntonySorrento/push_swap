@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 11:56:04 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/19 21:05:23 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:23:55 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	x_insert_after(t_elem *set, t_elem *new)
 {
-	t_elem *temp;
+	t_elem	*temp;
 
 	if (!set || !new)
 		return ;

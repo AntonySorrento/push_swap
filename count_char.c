@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:09:45 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 16:33:02 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:14:12 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	count_char(char *str, char c)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (!str)
 		return (0);

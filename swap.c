@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 07:05:22 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/23 12:00:31 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:23:19 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_elem	*swap(t_elem *A2)
 
 	if (!A2 || !A2->next)
 		 return (A2);
-	B1 = A2->next; 
+	B1 = A2->next;
 	A2->prev = B1;
 	if (B1->next)
 	{
@@ -31,27 +31,7 @@ t_elem	*swap(t_elem *A2)
 		A2->next = NULL;
 	B1->prev = NULL;
 	B1->next = A2;
-	return(B1);
-
-	/*
-	t_elem	*scd;
-	t_elem	*thr;
-
-	if (!head || !head->next)
-		 return (head);
-	
-	scd = head;
-	scd = scd->next;
-	thr = scd->next;
-	head->prev = head->next;
-	head->next = scd->next;
-	scd->next = scd->prev;
-	scd->prev = NULL;
-	if (!thr)
-		return (scd);
-	thr->prev = head;
-	return (scd);
-	*/
+	return (B1);
 }
 
 void	sa(t_data *data)

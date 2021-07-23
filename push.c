@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:06:59 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 10:56:59 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:44:33 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ void	opportunity(t_data *data, char	list)
 {
 	if (list == 'b')
 	{
+		rec_move(data, "pb\n");
 		if (data->b->next && data->b->nb < data->b->next->nb)
 			sb(data);
-	}
+	}		
 	if (list == 'a')
 	{
+		rec_move(data, "pa\n");
 		if (data->a->next && data->a->nb > data->a->next->nb)
 			sb(data);
 	}
@@ -42,7 +44,7 @@ void	push_b(t_data *data)
 		lm = 1;
 	}
 	data->b = elem_addstart(data->b, data->a);
-	data->b->ps = data->pivot; 
+	data->b->ps = data->pivot;
 	if (lm == 1)
 	{
 		data->a = a2;
@@ -50,7 +52,6 @@ void	push_b(t_data *data)
 	}
 	if (!data->b->next)
 		data->b9 = data->b;
-	rec_move(data, "pb\n");
 	opportunity(data, 'b');
 }
 
@@ -67,10 +68,10 @@ void	push_a(t_data *data)
 		b2 = data->b->next;
 		lm = 1;
 	}
-	else 
+	else
 		data->b9 = NULL;
 	data->a = elem_addstart(data->a, data->b);
-	data->a->ps = data->pivot; 
+	data->a->ps = data->pivot;
 	if (lm == 1)
 	{
 		data->b = b2;
@@ -80,6 +81,5 @@ void	push_a(t_data *data)
 		data->b = NULL;
 	if (!data->a->next)
 		data->a9 = data->a;
-	rec_move(data, "pa\n");
 	opportunity(data, 'a');
 }

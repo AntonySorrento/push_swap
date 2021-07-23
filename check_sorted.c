@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 18:00:14 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/15 09:09:01 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:13:30 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_sorted(t_data *data, char list)
 {
-	t_elem *temp;
+	t_elem	*temp;
 
 	if (list == 'a')
 	{

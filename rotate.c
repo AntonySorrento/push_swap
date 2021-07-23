@@ -6,7 +6,7 @@
 /*   By: asorrent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:13:41 by asorrent          #+#    #+#             */
-/*   Updated: 2021/07/16 10:49:51 by asorrent         ###   ########.fr       */
+/*   Updated: 2021/07/23 14:49:04 by asorrent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	rotate_b(t_data *data)
 	t_elem	*a;
 	t_elem	*b;
 	t_elem	*c;
+
 	a = data->b;
 	b = a->next;
 	c = data->b9;
